@@ -69,10 +69,10 @@ vim.defer_fn(
                 swap = {
                     enable = true,
                     swap_next = {
-                        ["<leader>a"] = "@parameter.inner"
+                        ["<C-A>"] = "@parameter.inner"
                     },
                     swap_previous = {
-                        ["<leader>A"] = "@parameter.inner"
+                        ["<C-S>"] = "@parameter.inner"
                     }
                 }
             }
