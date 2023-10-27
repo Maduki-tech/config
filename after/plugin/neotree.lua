@@ -1,5 +1,13 @@
 require("neo-tree").setup(
     {
+        event_handlers = {
+            {
+                event = "file_opened",
+                handler = function()
+                    require("neo-tree.command").execute({action = "close"})
+                end
+            }
+        },
         toggle = true,
         close_if_last_window = true, -- Close Neo-tree if it is the last window left in the tab
         popup_border_style = "rounded",

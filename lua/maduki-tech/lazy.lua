@@ -85,7 +85,7 @@ require("lazy").setup(
             opts = {}
         },
         -- "gc" to comment visual regions/lines
-        {"numToStr/Comment.nvim", opts = {}},
+        "terrortylor/nvim-comment",
         "JoosepAlviste/nvim-ts-context-commentstring",
         -- Transparent setup
         "xiyaowong/nvim-transparent",
@@ -174,7 +174,7 @@ require("lazy").setup(
         -- PlantUML
         {
             "https://gitlab.com/itaranto/plantuml.nvim",
-            tag = "*"
+            opts = {}
         },
         {
             "ThePrimeagen/refactoring.nvim",
@@ -186,11 +186,19 @@ require("lazy").setup(
                 require("refactoring").setup()
             end
         },
-        -- Development
+        "mfussenegger/nvim-lint",
+        "mfussenegger/nvim-jdtls",
         {
-            dir = "~/nvim-package/extreact.nvim",
-            dev = true
+            "akinsho/flutter-tools.nvim",
+            lazy = false,
+            dependencies = {
+                "nvim-lua/plenary.nvim",
+                "stevearc/dressing.nvim" -- optional for vim.ui.select
+            },
+            config = true
         }
+
+        -- Development
 
         -- HACK: CONFIG UP HERE
     },

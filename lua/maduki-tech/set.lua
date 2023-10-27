@@ -2,7 +2,7 @@
 vim.o.hlsearch = false
 
 -- Disable comment continuation
-vim.opt.formatoptions:remove{ "r", "c", "o" }
+vim.opt.formatoptions:remove {"r", "c", "o"}
 vim.cmd([[autocmd BufEnter * set formatoptions-=cro]])
 
 -- Make line numbers default
@@ -44,6 +44,7 @@ vim.o.termguicolors = true
 
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
+vim.opt.tabstop = 4
 vim.opt.expandtab = true
 
 vim.opt.swapfile = false
@@ -52,9 +53,21 @@ vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 vim.opt.ignorecase = true
 
-
 vim.opt.scrolloff = 8
 vim.o.sidescrolloff = 15
 
 vim.opt.colorcolumn = "80"
 
+-- Adding formatings
+vim.g.neoformat_cpp_clangformat = {
+    exe = "clang-format",
+    args = {'--style="{IndentWidth: 4}"'}
+}
+
+vim.g.neoformat_c_clangformat = {
+    exe = "clang-format",
+    args = {'--style="{IndentWidth: 4}"'}
+}
+
+vim.g.neoformat_enabled_cpp = {"clangformat"}
+vim.g.neoformat_enabled_c = {"clangformat"}

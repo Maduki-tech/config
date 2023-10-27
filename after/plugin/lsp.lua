@@ -27,7 +27,6 @@ local on_attach = function(_, bufnr)
 
     -- See `:help K` for why this keymap
     nmap("K", vim.lsp.buf.hover, "Hover Documentation")
-    nmap("<C-k>", vim.lsp.buf.signature_help, "Signature Documentation")
 
     -- Lesser used LSP functionality
     nmap("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
@@ -49,6 +48,15 @@ local on_attach = function(_, bufnr)
             vim.lsp.buf.format()
         end,
         {desc = "Format current buffer with LSP"}
+    )
+
+    vim.diagnostic.config(
+        {
+            underline = true,
+            virtual_text = true,
+            signs = true,
+            update_in_insert = false
+        }
     )
 end
 
@@ -116,4 +124,3 @@ mason_lspconfig.setup_handlers {
         }
     end
 }
-

@@ -5,6 +5,8 @@
 vim.keymap.set({"n", "v"}, "<Space>", "<Nop>", {silent = true})
 vim.keymap.set("n", "<leader>tf", "<cmd>Neoformat <CR>", {silent = true})
 
+vim.keymap.set("n", "<leader><leader>x", "<cmd>source % <CR>", {silent = true})
+
 -- Remap for dealing with word wrap
 vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", {expr = true, silent = true})
 vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", {expr = true, silent = true})
@@ -45,3 +47,4 @@ vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
 
 
 vim.api.nvim_set_keymap("n", "<leader>dc", ":lua require('neogen').generate()<CR>", {noremap = true, silent = true})
+
