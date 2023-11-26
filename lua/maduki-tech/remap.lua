@@ -28,10 +28,8 @@ vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
 -- Quit and save
 vim.keymap.set("n", "Q", vim.cmd.x)
 
-
 -- rename word
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-
 
 -- Basic window Movement
 vim.keymap.set("n", "<leader>d", "<cmd>:vsplit <CR>", {noremap = true, silent = true})
@@ -41,10 +39,9 @@ vim.keymap.set("n", "<leader>k", "<cmd>:wincmd k <CR>", {noremap = true, silent 
 vim.keymap.set("n", "<leader>l", "<cmd>:wincmd l <CR>", {noremap = true, silent = true})
 vim.keymap.set("n", "<leader>te", vim.cmd.TransparentToggle, {noremap = true, silent = true})
 
-
 -- Undutree
 vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
 
+vim.keymap.set("n", "<leader>ru", "<cmd>!./run<CR>", {noremap = true, silent = true})
 
 vim.api.nvim_set_keymap("n", "<leader>dc", ":lua require('neogen').generate()<CR>", {noremap = true, silent = true})
-
