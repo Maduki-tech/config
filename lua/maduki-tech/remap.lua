@@ -45,3 +45,17 @@ vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
 vim.keymap.set("n", "<leader>ru", "<cmd>!./run<CR>", {noremap = true, silent = true})
 
 vim.api.nvim_set_keymap("n", "<leader>dc", ":lua require('neogen').generate()<CR>", {noremap = true, silent = true})
+
+
+-- run c file in debug
+vim.keymap.set("n", "<leader>rc", ":w <CR> :!gcc -g % -o %<.o && ./%<.o <CR>", {noremap = true, silent = true})
+vim.keymap.set("n", "<leader>rm", ":w <CR> :!make && ./a <CR>", {noremap = true, silent = true})
+
+-- Debugging
+vim.keymap.set("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<CR>", {noremap = true, silent = true})
+vim.keymap.set("n", "<F5>", "<cmd>lua require'dap'.continue()<CR>", {noremap = true, silent = true})
+vim.keymap.set("n", "<F9>", "<cmd>lua require'dap'.step_over()<CR>", {noremap = true, silent = true})
+vim.keymap.set("n", "<F10>", "<cmd>lua require'dap'.step_into()<CR>", {noremap = true, silent = true})
+vim.keymap.set("n", "<F12>", "<cmd>lua require'dap'.step_out()<CR>", {noremap = true, silent = true})
+vim.keymap.set("n", "<leader>dr", "<cmd>lua require'dap'.repl.open()<CR>", {noremap = true, silent = true})
+

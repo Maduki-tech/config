@@ -64,6 +64,7 @@ require("lazy").setup(
             -- Adds git related signs to the gutter, as well as utilities for managing changes
             "lewis6991/gitsigns.nvim"
         },
+        -- Color scheme
         {
             "navarasu/onedark.nvim",
             priority = 1000,
@@ -71,6 +72,15 @@ require("lazy").setup(
                 vim.cmd.colorscheme "onedark"
             end
         },
+        {
+            "folke/tokyonight.nvim",
+            lazy = false,
+            priority = 1000,
+            opts = {}
+        },
+        {"catppuccin/nvim", name = "catppuccin", priority = 1000},
+        "rebelot/kanagawa.nvim",
+        {"ellisonleao/gruvbox.nvim", priority = 1000, config = true, opts = ...},
         {
             -- Set lualine as statusline
             "nvim-lualine/lualine.nvim"
@@ -188,16 +198,9 @@ require("lazy").setup(
         },
         "mfussenegger/nvim-lint",
         "mfussenegger/nvim-jdtls",
-        {
-            "akinsho/flutter-tools.nvim",
-            lazy = false,
-            dependencies = {
-                "nvim-lua/plenary.nvim",
-                "stevearc/dressing.nvim" -- optional for vim.ui.select
-            },
-            config = true
-        },
-        "mfussenegger/nvim-dap"
+        "mfussenegger/nvim-dap",
+        "theHamsta/nvim-dap-virtual-text",
+        {"rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"}}
 
         -- Development
 
