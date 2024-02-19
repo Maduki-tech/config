@@ -8,16 +8,24 @@ require("telescope").setup {
                 ["<C-d>"] = false
             }
         }
+    },
+    extensions = {
+        ["ui-select"] = {
+            require("telescope.themes").get_dropdown {}
+        }
     }
 }
 
 -- Enable telescope fzf native, if installed
 pcall(require("telescope").load_extension, "fzf")
+require("telescope").load_extension("ui-select")
 
 -- See `:help telescope.builtin`
 vim.keymap.set("n", "<leader>?", require("telescope.builtin").builtin, {desc = "[?] Find build in files"})
 vim.keymap.set("n", "<leader>fm", require("telescope.builtin").man_pages, {desc = "[F]ind [M]an pages"})
 vim.keymap.set("n", "<leader><space>", require("telescope.builtin").buffers, {desc = "[ ] Find existing buffers"})
+vim.keymap.set("n", "<leader>ft", "<cmd>:TodoTelescope <CR>", {desc = "[F]ind [T]odo"})
+
 vim.keymap.set(
     "n",
     "<leader>/",

@@ -69,7 +69,6 @@ require("lazy").setup(
             "navarasu/onedark.nvim",
             priority = 1000,
             config = function()
-                vim.cmd.colorscheme "onedark"
             end
         },
         {
@@ -145,7 +144,11 @@ require("lazy").setup(
             },
             build = ":TSUpdate"
         },
-        "theprimeagen/harpoon",
+        {
+            "theprimeagen/harpoon",
+            branch = "harpoon2",
+            requires = {{"nvim-lua/plenary.nvim"}}
+        },
         "mbbill/undotree",
         "zbirenbaum/copilot.lua",
         "sbdchd/neoformat",
@@ -169,6 +172,15 @@ require("lazy").setup(
             opts = {}
         },
         {"windwp/nvim-ts-autotag"},
+        -- install without yarn or npm
+        {
+            "iamcco/markdown-preview.nvim",
+            cmd = {"MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop"},
+            ft = {"markdown"},
+            build = function()
+                vim.fn["mkdp#util#install"]()
+            end
+        },
         {
             "themaxmarchuk/tailwindcss-colors.nvim",
             -- load only on require("tailwindcss-colors")
@@ -200,11 +212,35 @@ require("lazy").setup(
         "mfussenegger/nvim-jdtls",
         "mfussenegger/nvim-dap",
         "theHamsta/nvim-dap-virtual-text",
-        {"rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"}}
-
+        {"rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"}},
+        {
+            "stevearc/dressing.nvim",
+            opts = {}
+        },
+        {"nvim-telescope/telescope-ui-select.nvim"},
+        {
+            "nvim-java/nvim-java",
+            dependencies = {
+                "nvim-java/lua-async-await",
+                "nvim-java/nvim-java-core",
+                "nvim-java/nvim-java-test",
+                "nvim-java/nvim-java-dap",
+                "neovim/nvim-lspconfig",
+                "mfussenegger/nvim-dap",
+                {
+                    "williamboman/mason.nvim",
+                    opts = {
+                        registries = {
+                            "github:nvim-java/mason-registry",
+                            "github:mason-org/mason-registry"
+                        }
+                    }
+                }
+            }
+        },
         -- Development
+        {dir = "/Users/davidschluter/nvim-package/header.nvim"}
 
         -- HACK: CONFIG UP HERE
-    },
-    {}
+    }
 )

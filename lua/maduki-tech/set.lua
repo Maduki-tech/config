@@ -1,8 +1,10 @@
 -- Set highlight on search
 vim.o.hlsearch = false
 
+vim.o.confirm = true
+
 -- Disable comment continuation
-vim.opt.formatoptions:remove { "r", "c", "o" }
+vim.opt.formatoptions:remove {"r", "c", "o"}
 vim.cmd([[autocmd BufEnter * set formatoptions-=cro]])
 
 -- Make line numbers default
@@ -61,15 +63,15 @@ vim.opt.colorcolumn = "80"
 -- Adding formatings
 vim.g.neoformat_cpp_clangformat = {
     exe = "clang-format",
-    args = { '--style="{IndentWidth: 4}"' }
+    args = {'--style="{IndentWidth: 4}"'}
 }
 
 vim.g.neoformat_c_clangformat = {
     exe = "clang-format",
-    args = { '--style="{IndentWidth: 4}"' }
+    args = {'--style="{IndentWidth: 4}"'}
 }
 
+vim.g.neoformat_enabled_cpp = {"clangformat"}
+vim.g.neoformat_enabled_c = {"clangformat"}
 
-vim.g.neoformat_enabled_cpp = { "clangformat" }
-vim.g.neoformat_enabled_c = { "clangformat" }
-
+vim.cmd.colorscheme "tokyonight"
