@@ -47,10 +47,10 @@ cmp.setup {
         )
     },
     sources = {
+        {name = "tabnine"},
         {name = "nvim_lsp"},
         {name = "luasnip"},
         {name = "buffer"},
-        {name = "path"},
+        {name = "path"}
     }
 }
-

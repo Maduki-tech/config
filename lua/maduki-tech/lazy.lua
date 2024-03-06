@@ -151,6 +151,7 @@ require("lazy").setup(
         },
         "mbbill/undotree",
         "zbirenbaum/copilot.lua",
+        {"codota/tabnine-nvim", build = "./dl_binaries.sh"},
         "sbdchd/neoformat",
         {
             "nvim-neo-tree/neo-tree.nvim",
@@ -239,7 +240,8 @@ require("lazy").setup(
             }
         },
         -- Development
-        {dir = "/Users/davidschluter/nvim-package/header.nvim"}
+        {dir = "/Users/davidschluter/nvim-package/header.nvim"},
+        {dir = "/Users/davidschluter/personal/nvim-package/java_generator.nvim"}
 
         -- HACK: CONFIG UP HERE
     }
