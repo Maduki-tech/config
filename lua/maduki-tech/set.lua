@@ -13,6 +13,7 @@ vim.wo.number = true
 vim.wo.relativenumber = true
 
 vim.o.wrap = false
+vim.o.foldmethod = "manual"
 
 -- Enable mouse mode
 vim.o.mouse = "a"
