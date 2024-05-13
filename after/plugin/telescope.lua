@@ -32,6 +32,8 @@ vim.keymap.set("n", "<leader>fm", require("telescope.builtin").man_pages, {desc 
 vim.keymap.set("n", "<leader><space>", require("telescope.builtin").buffers, {desc = "[ ] Find existing buffers"})
 vim.keymap.set("n", "<leader>ft", "<cmd>:TodoTelescope <CR>", {desc = "[F]ind [T]odo"})
 
+vim.keymap.set("n", "<leader>ff", require("telescope.builtin").lsp_document_symbols, {desc = "[F]ind [F]unctions"})
+
 vim.keymap.set(
     "n",
     "<leader>/",

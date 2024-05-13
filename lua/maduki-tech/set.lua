@@ -75,4 +75,4 @@ vim.g.neoformat_c_clangformat = {
 vim.g.neoformat_enabled_cpp = {"clangformat"}
 vim.g.neoformat_enabled_c = {"clangformat"}
 
-vim.cmd.colorscheme "tokyonight"
+vim.cmd.colorscheme "onedark"

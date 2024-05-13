@@ -184,6 +184,10 @@ require("lazy").setup(
             ft = {"markdown"},
             build = function()
                 vim.fn["mkdp#util#install"]()
+            end,
+            init = function()
+                vim.g.mkdp_auto_close = 0
+                vim.g.mkdp_auto_start = 0
             end
         },
         {
@@ -220,6 +224,7 @@ require("lazy").setup(
         {"rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"}},
         {
             "stevearc/dressing.nvim",
+            "nvim-neotest/nvim-nio",
             opts = {}
         },
         {"nvim-telescope/telescope-ui-select.nvim"},
@@ -243,10 +248,57 @@ require("lazy").setup(
                 }
             }
         },
+        -- Testing
+        "rcasia/neotest-java",
+        {
+            "nvim-neotest/neotest",
+            dependencies = {
+                "nvim-neotest/nvim-nio",
+                "nvim-java/nvim-java-refactor",
+                "nvim-lua/plenary.nvim",
+                "antoinemadec/FixCursorHold.nvim",
+                "nvim-treesitter/nvim-treesitter"
+            }
+        },
+        -- {
+        --     "ray-x/go.nvim",
+        --     dependencies = {
+        --         -- optional packages
+        --         "ray-x/guihua.lua",
+        --         "neovim/nvim-lspconfig",
+        --         "nvim-treesitter/nvim-treesitter"
+        --     },
+        --     config = function()
+        --         require("go").setup()
+        --     end,
+        --     event = {"CmdlineEnter"},
+        --     ft = {"go", "gomod"},
+        --     build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
+        -- },
         -- Development
         {dir = "/Users/davidschluter/nvim-package/header.nvim"},
-        {dir = "/Users/davidschluter/personal/nvim-package/java_generator.nvim"}
+        {dir = "/Users/davidschluter/personal/nvim-package/java_generator.nvim"},
+        {
+            -- dir = "/Users/davidschluter/github/go.nvim/",
+            "ray-x/go.nvim",
+            dependencies = {
+                -- optional packages
+                "ray-x/guihua.lua",
+                "neovim/nvim-lspconfig",
+                "nvim-treesitter/nvim-treesitter"
+            },
+            event = {"CmdlineEnter"},
+            ft = {"go", "gomod"},
+            build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
+        }
 
         -- HACK: CONFIG UP HERE
     }
 )
+
+-- Set up lazy, and load my `lua/custom/plugins/` folder
+require("lazy").setup({ import = "custom/plugins" }, {
+  change_detection = {
+    notify = false,
+  },
+})

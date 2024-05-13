@@ -31,6 +31,7 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 
 -- Basic window Movement
 vim.keymap.set("n", "<leader>d", "<cmd>:vsplit <CR>", {noremap = true, silent = true})
+vim.keymap.set("n", "<leader>w", "<cmd>:split <CR>", {noremap = true, silent = true})
 vim.keymap.set("n", "<leader>h", "<cmd>:wincmd h <CR>", {noremap = true, silent = true})
 vim.keymap.set("n", "<leader>j", "<cmd>:wincmd j <CR>", {noremap = true, silent = true})
 vim.keymap.set("n", "<leader>k", "<cmd>:wincmd k <CR>", {noremap = true, silent = true})
@@ -56,4 +57,3 @@ vim.keymap.set("n", "<F9>", "<cmd>lua require'dap'.step_over()<CR>", {noremap = 
 vim.keymap.set("n", "<F10>", "<cmd>lua require'dap'.step_into()<CR>", {noremap = true, silent = true})
 vim.keymap.set("n", "<F12>", "<cmd>lua require'dap'.step_out()<CR>", {noremap = true, silent = true})
 vim.keymap.set("n", "<leader>dr", "<cmd>lua require'dap'.repl.open()<CR>", {noremap = true, silent = true})
-
